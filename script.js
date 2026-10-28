@@ -134,3 +134,51 @@ annuler.addEventListener("click", function() {
     btn.textContent = "Ajouter l'étudiant";
     annuler.hidden = true;
 });
+/* Tache 6 : Supprimer un etudiant */
+function supprimer(i) {
+    let confirmation = confirm(
+        "Voulez-vous vraiment supprimer cet étudiant ?"
+    );
+
+    if (confirmation) {
+        etudiants.splice(i, 1);
+
+        if (indexModif === i) {
+            form.reset();
+            indexModif = -1;
+            btn.textContent = "Ajouter l'étudiant";
+            annuler.hidden = true;
+        } else if (indexModif > i) {
+            indexModif--;
+        }
+
+        afficher();
+    }
+}
+
+// Afficher chaque groupe une seule fois
+function actualiserGroupes() {
+    let choix = filtreGroupe.value;
+
+    let groupes = [];
+
+    etudiants.forEach(function(e) {
+        if (!groupes.includes(e.groupe)) {
+            groupes.push(e.groupe);
+        }
+    });
+
+    filtreGroupe.innerHTML =
+        '<option value="">Tous les groupes</option>';
+
+    groupes.forEach(function(g) {
+        let option = document.createElement("option");
+        option.value = g;
+        option.textContent = g;
+        filtreGroupe.appendChild(option);
+    });
+
+    if (groupes.includes(choix)) {
+        filtreGroupe.value = choix;
+    }
+}
