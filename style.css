@@ -1,0 +1,206 @@
+/* Style général */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f3f5f9;
+    color: #333;
+}
+
+/* En-tête */
+header {
+    background: linear-gradient(135deg, #164e9c, #4388e8);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+}
+
+/* Contenu principal */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 22px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #00000012;
+}
+
+h2 {
+    color: #164e9c;
+    margin-top: 0;
+}
+
+/* Statistiques */
+.statistiques {
+    display: flex;
+    gap: 20px;
+}
+
+.carte {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background-color: #eaf1ff;
+    border-radius: 8px;
+}
+
+.carte h3 {
+    font-size: 16px;
+}
+
+.carte p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #164e9c;
+    margin-bottom: 5px;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+form input {
+    flex: 1;
+    min-width: 160px;
+}
+
+button {
+    padding: 11px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1764c0;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.btn-annuler {
+    background-color: #777;
+}
+
+.modifier {
+    background-color: #16834a;
+    margin: 3px;
+}
+
+.supprimer {
+    background-color: #d83232;
+    margin: 3px;
+}
+
+/* Recherche */
+.recherche {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.recherche h2 {
+    width: 100%;
+}
+
+.recherche input,
+.recherche select {
+    flex: 1;
+}
+
+/* Tableau */
+.tableau {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #164e9c;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f5fb;
+}
+
+tbody tr:hover {
+    background-color: #e2ecfb;
+}
+
+.admis {
+    color: green;
+    font-weight: bold;
+}
+
+.non-admis {
+    color: red;
+    font-weight: bold;
+}
+
+#message {
+    text-align: center;
+    color: #777;
+}
+
+/* Pied de page */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 35px;
+}
+
+/* Téléphones */
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
+    .statistiques {
+        flex-direction: column;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form input,
+    form button {
+        width: 100%;
+    }
+}
