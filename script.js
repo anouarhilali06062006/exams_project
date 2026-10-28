@@ -111,3 +111,26 @@ form.addEventListener("submit", function(e) {
 
     afficher();
 });
+
+/* Tache 5 : Modifier un etudiant */
+function modifier(i) {
+    nom.value = etudiants[i].nom;
+    groupe.value = etudiants[i].groupe;
+    moyenne.value = etudiants[i].moyenne;
+
+    indexModif = i;
+
+    btn.textContent = "Enregistrer la modification";
+    annuler.hidden = false;
+
+    nom.focus();
+}
+
+// Annuler la modification
+annuler.addEventListener("click", function() {
+    form.reset();
+
+    indexModif = -1;
+    btn.textContent = "Ajouter l'étudiant";
+    annuler.hidden = true;
+});
