@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des étudiants</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gestion des étudiants</h1>
+        <p>Application de gestion des notes et des groupes</p>
+    </header>
+
+    <main>
+        <section class="statistiques">
+            <div class="carte">
+                <h3>Nombre d'étudiants</h3>
+                <p id="nombre">0</p>
+            </div>
+
+            <div class="carte">
+                <h3>Moyenne générale</h3>
+                <p id="moyenneGenerale">0</p>
+            </div>
+        </section>
+
+        <section class="formulaire">
+            <h2>Informations de l'étudiant</h2>
+
+            <form id="form">
+                <input type="text" id="nom"
+                    placeholder="Nom complet" required>
+
+                <input type="text" id="groupe"
+                    placeholder="Groupe" required>
+
+                <input type="number" id="moyenne"
+                    placeholder="Moyenne /20"
+                    min="0" max="20" step="0.01" required>
+
+                <button type="submit" id="btn">
+                    Ajouter l'étudiant
+                </button>
+
+                <button type="button" id="annuler"
+                    class="btn-annuler" hidden>
+                    Annuler
+                </button>
+            </form>
+        </section>
+
+        <section class="recherche">
+            <h2>Liste des étudiants</h2>
+
+            <input type="text" id="recherche"
+                placeholder="Rechercher par nom...">
+
+            <select id="filtreGroupe">
+                <option value="">Tous les groupes</option>
+            </select>
+        </section>
+
+        <section class="tableau">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Groupe</th>
+                        <th>Moyenne</th>
+                        <th>Résultat</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="liste"></tbody>
+            </table>
+
+            <p id="message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projet réalisé avec HTML, CSS et JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
