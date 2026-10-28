@@ -73,3 +73,41 @@ function afficher() {
     actualiserGroupes();
     actualiserStatistiques();
 }
+/* Tache 4 : Ajouter un etudiant */
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nomSaisi = nom.value.trim();
+    let groupeSaisi = groupe.value.trim();
+    let note = Number(moyenne.value);
+
+    if (nomSaisi === "" || groupeSaisi === "") {
+        alert("Veuillez remplir tous les champs.");
+        return;
+    }
+
+    if (moyenne.value.trim() === "" ||
+        note < 0 || note > 20) {
+        alert("La moyenne doit etre entre 0 et 20.");
+        return;
+    }
+
+    let etudiant = {
+        nom: nomSaisi,
+        groupe: groupeSaisi,
+        moyenne: note
+    };
+
+    if (indexModif === -1) {
+        etudiants.push(etudiant);
+    } else {
+        etudiants[indexModif] = etudiant;
+    }
+
+    form.reset();
+    indexModif = -1;
+    btn.textContent = "Ajouter l'étudiant";
+    annuler.hidden = true;
+
+    afficher();
+});
