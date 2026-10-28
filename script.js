@@ -182,3 +182,37 @@ function actualiserGroupes() {
         filtreGroupe.value = choix;
     }
 }
+
+
+/* Tache 7 : Calculer les statistiques */
+function actualiserStatistiques() {
+    nombre.textContent = etudiants.length;
+
+    if (etudiants.length === 0) {
+        moyenneGenerale.textContent = "0.00";
+        return;
+    }
+
+    let total = 0;
+
+    etudiants.forEach(function(e) {
+        total = total + e.moyenne;
+    });
+
+    let moyenne = total / etudiants.length;
+
+    moyenneGenerale.textContent = moyenne.toFixed(2);
+}
+
+// Recherche par nom
+recherche.addEventListener("input", function() {
+    afficher();
+});
+
+// Filtrage par groupe
+filtreGroupe.addEventListener("change", function() {
+    afficher();
+});
+
+// Affichage initial
+afficher();
